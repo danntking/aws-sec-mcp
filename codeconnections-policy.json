@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codeconnections:GetConnection",
+        "codeconnections:GetHost",
+        "codeconnections:ListConnections",
+        "codeconnections:ListHosts",
+        "codeconnections:UseConnection"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

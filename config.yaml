@@ -1,0 +1,48 @@
+# AWS Configuration
+aws:
+  region: "us-east-1"
+  profile: null
+
+# MCP Server Configuration  
+server:
+  host: "127.0.0.1"
+  port: 8000
+  
+  # Logging configuration 
+  log_level: "info"        
+  minimal_logging: false      
+  startup_quiet: false         
+  tool_quiet: false           
+  
+  # Development settings
+  debug: true               
+  
+  # Performance settings
+  max_concurrent_requests: 10    
+  client_cache_ttl: 3600       
+
+# Cross-Account Access Configuration
+cross_account:
+  
+  role_name: "aws-security-mcp-cross-account-access"
+  session_name: "aws-security-mcp-session" 
+  session_duration_seconds: 3600        # 1 hour (max for SSO role chaining)
+  refresh_threshold_minutes: 15         
+  
+  # Automation settings
+  auto_setup_on_startup: true          
+  auto_refresh_enabled: true           
+  
+  # Performance settings  
+  max_concurrent_assumptions: 50       
+  connection_pool_size: 100            
+  retry_max_attempts: 3                
+  retry_backoff_factor: 1.5            
+  progress_update_interval: 10         
+
+# Athena Configuration
+athena:
+  default_output_location: "s3://your-athena-results-bucket/"
+  default_workgroup: "primary"
+  default_catalog: "AwsDataCatalog"
+
